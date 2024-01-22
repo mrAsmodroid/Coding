@@ -1,7 +1,9 @@
 # mrAsmodroid Coding Rules
 
 [![Site](https://softwaredev.space/assets/images/ico.webp)](https://softwaredev.space/)
+
 Введение:
+
 [Методы](#Методы)
 
 ## Методы
