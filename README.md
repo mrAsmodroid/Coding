@@ -131,6 +131,42 @@ void V_CreateLocalBD()
 }
 ```
 
+Если к иенумератору планируется обращения из нескольких источников, то его запуск делается через метод-прокладку
+#### Пример:
+```csharp
+void V_Preload()
+{
+   //
+   //...Some elthe code...
+   //
+   V_StartAction();
+}
+void V_SetTexure()
+{
+   //
+   //...Some elthe code...
+   //
+   V_StartAction();
+}
+void V_CreateLocalBD()
+{
+   //
+   //...Some elthe code...
+   //
+   V_StartAction();
+}
+void V_StartAction()
+{
+   StartCoroutine(IE_Action());
+}
+IEnumerator IE_Action()
+{
+   //
+   //...code...
+   //
+}
+```
+
 Инкапсуляция методов
 #### Пример:
 ```csharp
