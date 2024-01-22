@@ -1,4 +1,4 @@
-# mrAsmodroid Coding Style (mrACS)
+# mrAsmodroid Coding Style (mrA.CS)
 
 [![Site](https://softwaredev.space/assets/images/ico.webp)](https://softwaredev.space/)
 
