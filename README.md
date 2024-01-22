@@ -1,4 +1,4 @@
-# mrAsmodroid Coding Rules
+# mrAsmodroid Coding Style
 
 [![Site](https://softwaredev.space/assets/images/ico.webp)](https://softwaredev.space/)
 
