@@ -249,7 +249,7 @@ Scripts
    - scr_General.cs
    - Data.cs
    - Enum.cs
-   - /Player/
+   - /F_Player/
       - scr_Player_Setting.cs
       - scr_Player_Move.cs
 
@@ -361,8 +361,16 @@ public enum E_ButtonStatus
    - Prefabs
    - Animations
    - Shaders
-   ...
+   - ...
    - LightSettings
+
+### Подкаталоги в папке Scripts
+Все подкаталоги в папуе "/Scripts/" в начале имуют "F_".
+#### Пример
+- Scripts
+   - F_VFX
+   - F_Player
+   - F_Camera
 
 ### DATA_resources
 Данный каталог хранит в себе все внешние ресурсы, которые добавляются извне, такие как текстуры, аудио, 3Д модели, шрифты и т.д. плюс в отдельном подкаталоге "AddOn" хранятся дополнительные ассеты.
@@ -371,7 +379,7 @@ public enum E_ButtonStatus
    - Sounds
    - Fonts
    - 3D
-   ...
+   - ...
    - AddOn
       - TextMesh Pro
 
