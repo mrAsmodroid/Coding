@@ -2,14 +2,15 @@
 
 [![Site](https://softwaredev.space/assets/images/ico.webp)](https://softwaredev.space/)
 
-Данное правило, распространяется для языка C# под разработку на движке Unity. Не является истиной для всех и применяется только в разработке проектов относящихся к моей комаде. Все, чего нет тут, уточняется лично со мной и тут будет дописываться.
+Данное правило, распространяется для языка C# под разработку на движке Unity. Не является истиной для всех и применяется только в разработке проектов относящихся к моей комаде. Все, чего нет тут, уточняется лично со мной и тут будет дописываться. 
 
 Введение:
    * [Методы](#Методы)
    * [Типы_Данных_(Переменные)](#Типы_Данных_(Переменные))
    * [Скрипты](#Скрипты)
    * [Каталоги](#Каталоги)
-
+   * [Настройки_GIT](#Настройки_GIT)
+   
 
 ## Методы
 
@@ -148,7 +149,7 @@ public void V_Two()
 
 ## Типы_Данных_(Переменные)
 
-Глобальные типы данных начинаются с "_тип переменной"(c самленькой буквы, кроме исключений) далее "_подтип"(если есть) далее "_наименование". Исключение у bool (_is_), [Enum.cs](#Enum.cs)(_e_), [Data.cs](#Data.cs)(_d_), синглтона(m_). Или сокращение у стандартных типов данных Unity или string. Само наименование, имеет стиль PascalCase. 
+Глобальные типы данных начинаются с "_тип переменной"(c самленькой буквы, кроме исключений) далее "_подтип"(если есть) далее "_наименование". Исключение у bool (_is_), [Enum.cs](#Enumcs)(_e_), [Data.cs](#Datacs)(_d_), синглтона(m_). Или сокращение у стандартных типов данных Unity или string. Само наименование, имеет стиль PascalCase. 
 #### Пример:
 ```csharp
 public static scr_SomeScript scr_SomeScript;
@@ -203,7 +204,7 @@ public string SET_titleText { set => _TMP_title.text = value; }
 
 Массивы, используются List<> а не [];
 
-В случае, если типы данных, можно сгрупировать, то делать это, через структуру [Data.cs](#Data.cs)
+В случае, если типы данных, можно сгрупировать, то делать это, через структуру [Data.cs](#Datacs)
 #### Пример не верного решения:
 ```csharp
 //script Scripts/scr_Test.cs
@@ -270,50 +271,50 @@ Scripts
    [Serializable]
    public struct D_Quest
    {
-   public List<Dm_Quest_Data> _quests;
+      public List<Dm_Quest_Data> _quests;
    }
    [Serializable]
-   public struct Dm_Quest_Data
+      public struct Dm_Quest_Data
    {
-   public string _name;
-   public List<Dm_Quests> _quests;
+      public string _name;
+      public List<Dm_Quests> _quests;
    }
    [Serializable]
-   public struct Dm_Quests
+      public struct Dm_Quests
    {
-   public string _name; // для редактора
-   public int COUNT;
-   public string _comment; //личный комментарий к этому вопросу
-   public string _str_main_quest; // Основной вопрос
-   public string _str_add_text_wind; // Дополнительная плашка с текстом
-   public string _str_end_message; // Если это последний вопрос, отображение напутствующего сообщения
-   public bool _is_ansers; // проверка на то, что ответ дан
-   public int _int_emotion; // Эмоция над символом
-   public string _str_emotion; // Текст вопроса эмоции
-   public List<int> _int_list_emotion_number; // Номера ответов которые подулючаеют эмоцию
-   public int _int_position_plaler; // Позиция игрока у символа
-   public List<Dm_Symbol> _symbols; // База с объектом символа и его позиция
-   public List<string> _ansers; //База с вопросом и возможными ответами
-   public string _str_own_Anser; // Собственный ответ
-   public bool _is_multy_anser; // Если ИСТИНА, то возможно выбирать несколько ответов
-   public List<Dm_BlockAnswer> _block_check; //При _is_multy_anser = true, проверяется, нужно ли ограничить возможные ответы
-   public bool _is_extra_end; // Если диаграмма обрывается на этом вопросе
-   public int _int_extra_end; // Номер вопроса, являющегося консовкой
-   public List<int> _int_list_answer_number; // Номера ответов
-   public int _back_emotion; //Проверка предыдущего ответа по эмоции
-   public List<Dm_BackAnser> _back_answers; // Проверка предыдущего связаного вопроса
+      public string _name; // для редактора
+      public int COUNT;
+      public string _comment; //личный комментарий к этому вопросу
+      public string _str_main_quest; // Основной вопрос
+      public string _str_add_text_wind; // Дополнительная плашка с текстом
+      public string _str_end_message; // Если это последний вопрос, отображение напутствующего сообщения
+      public bool _is_ansers; // проверка на то, что ответ дан
+      public int _int_emotion; // Эмоция над символом
+      public string _str_emotion; // Текст вопроса эмоции
+      public List<int> _int_list_emotion_number; // Номера ответов которые подулючаеют эмоцию
+      public int _int_position_plaler; // Позиция игрока у символа
+      public List<Dm_Symbol> _symbols; // База с объектом символа и его позиция
+      public List<string> _ansers; //База с вопросом и возможными ответами
+      public string _str_own_Anser; // Собственный ответ
+      public bool _is_multy_anser; // Если ИСТИНА, то возможно выбирать несколько ответов
+      public List<Dm_BlockAnswer> _block_check; //При _is_multy_anser = true, проверяется, нужно ли ограничить возможные ответы
+      public bool _is_extra_end; // Если диаграмма обрывается на этом вопросе
+      public int _int_extra_end; // Номер вопроса, являющегося консовкой
+      public List<int> _int_list_answer_number; // Номера ответов
+      public int _back_emotion; //Проверка предыдущего ответа по эмоции
+      public List<Dm_BackAnser> _back_answers; // Проверка предыдущего связаного вопроса
    }
    [Serializable]
-   public struct Dm_Symbol
+      public struct Dm_Symbol
    {
-   public int _int_answer;
-   public int _int_symbol_data;
+      public int _int_answer;
+      public int _int_symbol_data;
    }
    [Serializable]
-   public struct Dm_BackAnser
+      public struct Dm_BackAnser
    { 
-   public int _int_controll_quest; // номер предыдущего вопроса
-   public List<int> _int_list_controll_answer_number; // номера ответов ведущий к этому вопросу
+      public int _int_controll_quest; // номер предыдущего вопроса
+      public List<int> _int_list_controll_answer_number; // номера ответов ведущий к этому вопросу
    }
 }
 ```
@@ -344,3 +345,45 @@ public enum E_ButtonStatus
 ```
 
 ## Каталоги
+
+Особенности в архитектуре каталогов проекта не много, но есть.
+Стартово, в проект добавляется два каталога:
+#### Пример
+   - DATA_project
+   - DATA_resources
+
+В чем разница:
+
+### DATA_project
+Данный тип каталога хранит в себе все ресурсы, которые созданы внутри Unity, такие как префабы, материалы, шейдеры, анимации, настройки света и т.п. Под каждый тип, создется подкаталог, для организации врхитектуры.
+#### Пример
+- DATA_project
+   - Prefabs
+   - Animations
+   - Shaders
+   ...
+   - LightSettings
+
+### DATA_resources
+Данный каталог хранит в себе все внешние ресурсы, которые добавляются извне, такие как текстуры, аудио, 3Д модели, шрифты и т.д. плюс в отдельном подкаталоге "AddOn" хранятся дополнительные ассеты.
+- DATA_resources
+   - Sprites
+   - Sounds
+   - Fonts
+   - 3D
+   ...
+   - AddOn
+      - TextMesh Pro
+
+## Настройки_GIT
+
+### Git Ignore
+Последняя строчка добавляется только, если папка AddOn в сумме со всем проектом, превышает допустимые лимиты загрузки GIT (2Gb)
+```
+/*
+!/Assets/
+!/Packages/
+!/ProjectSettings/
+!/UserSettings/
+/Assets/DATA_resources/AddOn*
+```
