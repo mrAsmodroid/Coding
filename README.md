@@ -1,6 +1,6 @@
 # mrAsmodroid Coding Style (mrA.CS)
 
-[![Site](https://softwaredev.space/assets/images/ico.webp)](https://softwaredev.space/)
+[![Site](https://softwaredev.space/Logo128.png)](https://softwaredev.space/)
 
 Данное правило, распространяется для языка C# под разработку на движке Unity. Не является истиной для всех и применяется только в разработке проектов относящихся к моей комаде. Все, чего нет тут, уточняется лично со мной и тут будет дописываться. 
 
